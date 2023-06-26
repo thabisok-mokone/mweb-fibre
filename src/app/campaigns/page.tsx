@@ -25,7 +25,7 @@ const fetcher = async (url: string): Promise<any> => {
 };
 
 const campaignsURL = "https://apigw.mweb.co.za/prod/baas/proxy/marketing/campaigns/fibre?channels=120&visibility=public";
-const promocodeProductsURL = "https://apigw.mweb.co.za/prod/baas/proxy/marketing/products/promos/";
+const promocodeURL = "https://apigw.mweb.co.za/prod/baas/proxy/marketing/products/promos/";
 
 const Campaigns = (): JSX.Element => {
   const { data, error } = useSWR(
@@ -36,7 +36,7 @@ const Campaigns = (): JSX.Element => {
   const [selectedCampaignCode, setSelectedCampaignCode] = useState<string>('');
   const [selectedCampaignCategory, setSelectedCampaignCategory] = useState<string>('');
   const [selectedCampaignPromoCodes, setSelectedCampaignPromoCodes] = useState<string[]>([]);
-  const [promocodeProductsURLWithPromocodes, setPromocodeProductsURLWithPromocodes] = useState<string>('');
+  const [promocodeProductsURL, setPromocodeProductsURL] = useState<string>('');
 
   if (error) {
     return <div>Error fetching data</div>;
@@ -66,8 +66,8 @@ const Campaigns = (): JSX.Element => {
 
       // Generate the URL with the selected promo codes
       const promoCodeUrlSegment = selectedCampaign.promocodes.join(",");
-      const updatedPromocodeProductsURLWithPromocodes = `${promocodeProductsURL}${promoCodeUrlSegment}?sellable_online=true`;
-      setPromocodeProductsURLWithPromocodes(updatedPromocodeProductsURLWithPromocodes);
+      const updatedPromocodeProductsURLWithPromocodes = `${promocodeURL}${promoCodeUrlSegment}?sellable_online=true`;
+      setPromocodeProductsURL(updatedPromocodeProductsURLWithPromocodes);
     }
   };
 
@@ -98,7 +98,7 @@ const Campaigns = (): JSX.Element => {
             ))}
           </ul>
           <p>URL with Selected Promo Codes:</p>
-          <a href={promocodeProductsURLWithPromocodes}>{promocodeProductsURLWithPromocodes}</a>
+          <a href={promocodeProductsURL}>{promocodeProductsURL}</a>
         </div>
       )}
     </div>
