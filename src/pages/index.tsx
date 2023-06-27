@@ -35,6 +35,10 @@ const Home = ({
         <h1>MWEB Fibre products</h1>
         <div>
           <div>
+            <ProviderPicker
+          providers={providers}
+          handleSelectedProvidersChange={handleSelectedProvidersChange}
+        />
             </div> 
           <div>
             <CampaignSelector
@@ -51,10 +55,6 @@ const Home = ({
               handleSelectedProvidersChange={handleSelectedProvidersChange}
             />
           </div>
-          <ProviderPicker
-          providers={providers}
-          handleSelectedProvidersChange={handleSelectedProvidersChange}
-        />
         </div>
 
         <ProductList
