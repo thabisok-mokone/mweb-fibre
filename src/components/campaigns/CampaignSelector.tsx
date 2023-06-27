@@ -1,4 +1,5 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
+import type { ChangeEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -37,7 +38,9 @@ export const fetchCampaigns = async (): Promise<CampaignRes> => {
 
 export const useCampaigns = (params: { initialData?: CampaignRes }) => {
   const { initialData } = params;
-  return useQuery<CampaignRes>(["campaigns"], fetchCampaigns, {
+  return useQuery<CampaignRes>({
+    queryKey: ["campaigns"],
+    queryFn: fetchCampaigns,
     initialData,
   });
 };
@@ -49,7 +52,7 @@ const CampaignSelector: React.FC<CampaignSelectorProps> = ({
 }) => {
   return (
     <div>
-      <label htmlFor="promotion-select">Select a promotion:</label>
+      <label htmlFor="promotion-select">Choose a promotion:</label>
       <select
         id="promotion-select"
         value={selectedCampaign}

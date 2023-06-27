@@ -1,5 +1,5 @@
 import React from "react";
-import { Provider } from "../../services-infomation/providerInfo";
+import type { Provider } from "../../services-infomation/providerInfo";
 import { PriceRangeFilter } from "../price-range-filter/PriceRangeFilter";
 import { ProviderFilter } from "../../services-filter/servicesFilter";
 
