@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mweb Fibre Product Browser
 
-## Getting Started
+This project demonstrates how to use Mweb's Fibre APIs to create a React web application using Next.js. The application allows users to browse Mweb's Fibre products from different providers, filter them based on price range, and select multiple providers to view their associated products.
 
-First, run the development server:
+## Requirements
+
+To run this application, you need to have the following:
+
+- Node.js installed on your machine
+- Access to Mweb's Fibre APIs
+
+## Installation
+
+1. Clone the repository from GitHub:
+
+```bash
+git clone https://github.com/thabisok-mokone/mweb-fibre
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd mweb-fibre
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+
+# Configuration
+
+Please note that the URL used to fetch data is public and accessible:
+
+```bash
+https://apigw.mweb.co.za/prod/baas/proxy/marketing/campaigns/fibre?channels=120&visibility=public
+```
+
+# Usage
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to http://localhost:3000 to access the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# 1. Get Fibre products for all providers
+The application retrieves Fibre products from Mweb's API for all available providers. These products are then displayed in a user-friendly format.
 
-## Learn More
+# 2. Display icons for each provider
+Each Fibre provider is associated with a unique icon. The application fetches these icons from Mweb's API and displays them alongside the provider's name.
 
-To learn more about Next.js, take a look at the following resources:
+# 3. Multiple select providers and display associated products
+Users can select one or more providers using checkboxes. Once selected, the application filters and displays only the products associated with the selected providers.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 4. Filter by price range
+A price range filter allows users to refine their search results based on the product's price. The application provides a slider interface to select the desired price range, and the products are updated accordingly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Deployment
+The application is deployed to production on Vercel. You can access the deployed version using the following link:
 
-## Deploy on Vercel
+[MWEB-Fibre-App](https://mweb-fibre-9hgzyxr50-thabisok-mokone.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
